@@ -6,6 +6,13 @@
 
 	<%= render "fields", f: f %>
 
+<fieldset>
+		<%= f.fields_for :products do |products_form| %>
+			<%= render "admin/products/product_fields", f: products_form %>
+		<% end %>
+</fieldset>
+	<%= link_to_add_fields "Add another Product", f, :products %>
+
 	<%= f.submit %>
 
 	<% end %>

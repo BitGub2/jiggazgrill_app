@@ -41,7 +41,7 @@ class Admin::CategoriesController < ApplicationController
 	private
 	
 	def category_params
-		params.require(:category).permit(:title, :listing_order)
+		params.require(:category).permit(:title, :listing_order, products_attributes: [:id, :name, :description, :price, :_destroy])
 	end
 			
 end

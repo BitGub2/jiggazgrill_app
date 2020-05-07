@@ -1,0 +1,25 @@
+
+<%= render 'shared/error_messages', object: f.object %>
+<div class="nested-fields">
+  <h3>Product Information</h3>
+  <div class="form-group">
+    <%= f.label :name %>
+    <%= f.text_field :name, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :description %>
+    <%= f.text_field :description, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :price %>
+    <%= f.number_field :price, class: "form-control" %>
+  </div>
+
+  <div>
+    <%= link_to "delete product", '#', class: "remove_fields" %>
+    <%= f.hidden_field :_destroy %>
+  </div>
+
+</div>
