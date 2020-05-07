@@ -1,17 +1,26 @@
-<h1>Category Listings</h1>
+<div class="row"> <h1>Category Listings</h1> </div>
 
 <%= link_to 'Create a new Category', new_admin_category_path %>
 </br>
 
-<table>
-	<tr>
-		<th></th>
+<table class="table">
+	<thead>
+		<tr>
+			<th scope="col">Title</th>
+			<th scope="col"></th>
+			<th scope="col"></th>
+
 	</tr>
+</thead>
 	
 	<% @categories.each do |category| %>
 
 	<tr>
 		<td> <%=link_to category.title, edit_admin_category_path(category) %></td>
+		<td> <%=link_to "Edit Category Content", edit_admin_category_path(category) %></td>
+		<td><%= link_to 'Delete Category', admin_category_path(category),
+              method: :delete,
+              data: { confirm: 'Are you sure?' } %></td>
 	</tr>
 
 	<% end %>
