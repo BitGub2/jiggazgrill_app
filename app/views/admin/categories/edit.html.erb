@@ -1,0 +1,11 @@
+<h1> Edit Category </h1>
+
+<%= form_with model: [:admin, @category] do |f| %>
+	<%= f.label :title %>
+	<%= f.text_field :title %>
+
+	<%= f.label :listing_order %>
+	<%= f.number_field :listing_order %>
+
+	<%= f.submit %>
+<% end %>

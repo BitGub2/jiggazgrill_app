@@ -1,1 +1,19 @@
-I am the category index, I worked tooooo!!!
+<h1>Category Listings</h1>
+
+<%= link_to 'Create a new Category', new_admin_category_path %>
+</br>
+
+<table>
+	<tr>
+		<th></th>
+	</tr>
+	
+	<% @categories.each do |category| %>
+
+	<tr>
+		<td> <%=link_to category.title, edit_admin_category_path(category) %></td>
+	</tr>
+
+	<% end %>
+
+</table>	
