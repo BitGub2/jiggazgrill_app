@@ -4,7 +4,7 @@
 	<%= link_to 'Back to Category Listings', admin_categories_path %>
 </div>
 
-<%= form_with model: [:admin, @category], local: true do |f| %>
+<%= form_with model: [:admin, @category], class:"was-validated", local: true do |f| %>
 	
 	<div class="form-group">
 		<%= render "fields", f: f %>
@@ -22,6 +22,6 @@
 
 	<div class="form-row">
 		<%= f.submit "Update Category Information", {class: "col btn btn-primary"} %>
-	<%= link_to 'Back to Category Listings', admin_categories_path, {class: "col btn btn-secondary"} %>
+	<%= link_to 'Back to Category Listings', admin_categories_path, { class: "col btn btn-secondary"} %>
 
 	<% end %>

@@ -20,7 +20,7 @@
 		<td> <%=link_to "Edit Category Content", edit_admin_category_path(category) %></td>
 		<td><%= link_to 'Delete Category', admin_category_path(category),
               method: :delete,
-              data: { confirm: 'Are you sure?' } %></td>
+              data: { confirm: 'Are you sure? This will permenently delete all products associated with this category.' } %></td>
 	</tr>
 
 	<% end %>

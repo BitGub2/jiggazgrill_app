@@ -1,14 +1,14 @@
 
 <%= render 'shared/error_messages', object: f.object %>
 
-<div class="form-row">
+<div class="form-group form-row">
 	<div class="col-7">
 		<%= f.label :title %>
-		<%= f.text_field :title, class: "form-control" %>
+		<%= f.text_field :title, class: "form-control", required: true %>
 	</div>
 
 	<div class="col">
 		<%= f.label :listing_order %>
-		<%= f.number_field :listing_order, class: "form-control" %>
+		<%= f.number_field :listing_order, class: "form-control", required: true %>
 	</div>
 </div>

@@ -2,10 +2,10 @@
 
 <%= link_to 'Back to Category Listings', admin_categories_path %>
 
-<%= form_with model: [:admin, @category], local: true do |f| %>
+<%= form_with model: [:admin, @category], class: "was-validated", local: true do |f| %>
 
 	<%= render "fields", f: f %>
 
-	<%= f.submit %>
+	<%= f.submit class:"btn btn-primary" %>
 
 	<% end %>
