@@ -1,18 +1,27 @@
 <h1> Edit Category </h1>
 
-<%= link_to 'Back to Category Listings', admin_categories_path %>
+<div>
+	<%= link_to 'Back to Category Listings', admin_categories_path %>
+</div>
 
 <%= form_with model: [:admin, @category], local: true do |f| %>
+	
+	<div class="form-group">
+		<%= render "fields", f: f %>
+	</div>
 
-	<%= render "fields", f: f %>
-
-<fieldset>
+<div class="form-group">
 		<%= f.fields_for :products do |products_form| %>
 			<%= render "admin/products/product_fields", f: products_form %>
 		<% end %>
-</fieldset>
-	<%= link_to_add_fields "Add another Product", f, :products %>
+	<div>
+		<%= link_to_add_fields "Add another Product", f, :products %>
+	</div>
+</div>
 
-	<%= f.submit %>
+
+	<div class="form-row">
+		<%= f.submit "Update Category Information", {class: "col btn btn-primary"} %>
+	<%= link_to 'Back to Category Listings', admin_categories_path, {class: "col btn btn-secondary"} %>
 
 	<% end %>

@@ -11,7 +11,7 @@ class Admin::CategoriesController < ApplicationController
 	def create
 		@category = Category.new(category_params)
 		if @category.save
-			redirect_to admin_categories_path
+			redirect_to edit_admin_category_path(@category)
 			flash[:success] = "New Category has been created!"
 		else
 			render 'new'
@@ -20,6 +20,9 @@ class Admin::CategoriesController < ApplicationController
 
 	def edit
 		@category = Category.find(params[:id])
+		if @category.products.blank?
+		  	1.times {@category.products.build}
+		  end
 	end
 
 	def update

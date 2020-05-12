@@ -8,7 +8,7 @@ class removeFields {
   iterateLinks() {
     // Use event delegation to ensure any fields added after the page loads are captured.
     document.addEventListener('click', e => {
-      if (e.target && e.target.className == 'remove_fields') {
+      if (e.target && e.target.id == 'remove_fields') {
         this.handleClick(e.target, e)
       }
     })
